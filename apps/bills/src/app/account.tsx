@@ -72,6 +72,20 @@ export default function Account({ session }: AccountProps) {
     setLoading(false);
   }
 
+  async function handleResetPasswordRequest() {
+    if (!session.user.email) return;
+
+    const { error } = await supabase.auth.resetPasswordForEmail(
+      session.user.email
+    );
+
+    if (error) {
+      alert(error);
+    } else {
+      alert('Password recovery email has been sent.');
+    }
+  }
+
   return (
     <form
       onSubmit={(e) => updateProfile(e, avatar_url)}
@@ -113,6 +127,16 @@ export default function Account({ session }: AccountProps) {
           disabled={loading}
         >
           {loading ? 'Loading ...' : 'Update'}
+        </button>
+      </div>
+
+      <div>
+        <button
+          className="button block"
+          type="button"
+          onClick={() => handleResetPasswordRequest()}
+        >
+          Reset Password
         </button>
       </div>
 
