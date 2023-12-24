@@ -1,22 +1,17 @@
-import { Session } from '@supabase/supabase-js';
-import { useEffect, useState } from 'react';
-import { supabase } from '../lib/supabase-client';
-import Account from './account';
-import Login from './login';
+import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
+import { Auth } from '@supabase/auth-ui-react';
+import { ThemeSupa } from '@supabase/auth-ui-shared';
+import { useEffect } from 'react';
+import TodoList from '../components/todo-list';
 
 let resettingPassword = false;
 
 function App() {
-  const [session, setSession] = useState<Session | null>(null);
+  const session = useSession();
+  const supabase = useSupabaseClient();
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-    });
-
     supabase.auth.onAuthStateChange(async (_event, session) => {
-      setSession(session);
-
       if (!resettingPassword && _event === 'PASSWORD_RECOVERY') {
         resettingPassword = true;
 
@@ -35,17 +30,24 @@ function App() {
         resettingPassword = false;
       }
     });
-  }, []);
+  }, [supabase.auth]);
 
   return (
     <div className="container" style={{ padding: '50px 0 100px 0' }}>
       {!session ? (
         <>
           {/* <Auth /> */}
-          <Login />
+          {/* <Login /> */}
+          <Auth
+            supabaseClient={supabase}
+            appearance={{ theme: ThemeSupa }}
+            theme="dark"
+            providers={[]}
+          />
         </>
       ) : (
-        <Account key={session.user.id} session={session} />
+        // <Account key={session.user.id} session={session} />
+        <TodoList session={session} />
       )}
     </div>
   );
