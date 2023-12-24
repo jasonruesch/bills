@@ -1,28 +1,28 @@
 {
-  "name": "bills-database",
+  "name": "bills-data-access",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/bills/database/src",
+  "sourceRoot": "libs/bills/data-access/src",
   "projectType": "library",
   "targets": {
     "start": {
       "executor": "nx:run-commands",
       "options": {
         "commands": ["supabase start"],
-        "cwd": "libs/bills/database"
+        "cwd": "libs/bills/data-access"
       }
     },
     "stop": {
       "executor": "nx:run-commands",
       "options": {
         "commands": ["supabase stop"],
-        "cwd": "libs/bills/database"
+        "cwd": "libs/bills/data-access"
       }
     },
     "create-local-snapshot": {
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "npx ts-node libs/bills/database/src/create-snapshot-of-local.ts -P libs/database-instance/aeons-world/tsconfig.json"
+          "npx ts-node libs/bills/data-access/src/create-snapshot-of-local.ts -P libs/bills/data-access/tsconfig.json"
         ],
         "parallel": false
       }
@@ -31,7 +31,7 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "npx ts-node libs/bills/database/src/create-snapshot-of-prod.ts -P libs/database-instance/aeons-world/tsconfig.json"
+          "npx ts-node libs/bills/data-access/src/create-snapshot-of-prod.ts -P libs/bills/data-access/tsconfig.json"
         ],
         "parallel": false
       }
@@ -40,7 +40,7 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "npx ts-node libs/bills/database/src/restore-snapshot.ts -P libs/bills/database/tsconfig.json"
+          "npx ts-node libs/bills/data-access/src/restore-snapshot.ts -P libs/bills/data-access/tsconfig.json"
         ],
         "parallel": false,
         "__unparsed__": []
@@ -50,7 +50,7 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "PGPASSWORD=postgres psql -U postgres -h 127.0.0.1 -p 54322 -f libs/bills/database/supabase/clear-db.sql"
+          "PGPASSWORD=postgres psql -U postgres -h 127.0.0.1 -p 54322 -f libs/bills/data-access/supabase/clear-db.sql"
         ],
         "parallel": false,
         "__unparsed__": []

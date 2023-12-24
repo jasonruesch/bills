@@ -15,6 +15,6 @@ async function createSnapshotOfLocal() {
     })) || now.toISOString();
 
   execSync(
-    `PGPASSWORD=postgres pg_dump -h localhost -p 54322 -U postgres -a --inserts -f libs/bills/database/supabase/snapshots/${name}.sql -t public.bills`
+    `PGPASSWORD=postgres pg_dump -h localhost -p 54322 -U postgres -a --inserts -f libs/bills/data-access/supabase/snapshots/${name}.sql -t public.bills`
   );
 }

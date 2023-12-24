@@ -15,6 +15,6 @@ async function createSnapshotOfProd() {
     })) || now.toISOString();
 
   execSync(
-    `PGPASSWORD=$BILLS_DB_POSTGRES_PASSWORD pg_dump -h $BILLS_DB_POSTGRES_HOST -p 5432 -U postgres -a --inserts -f libs/bills/database/supabase/snapshots/${name}.prod.sql -t public.bills`
+    `PGPASSWORD=$BILLS_DB_POSTGRES_PASSWORD pg_dump -h $BILLS_DB_POSTGRES_HOST -p 5432 -U postgres -a --inserts -f libs/bills/data-access/supabase/snapshots/${name}.prod.sql -t public.bills`
   );
 }

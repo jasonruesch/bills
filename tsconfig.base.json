@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@bills/bills-database": ["libs/bills/database/src/index.ts"]
+      "@bills/data-access": ["libs/bills/data-access/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
