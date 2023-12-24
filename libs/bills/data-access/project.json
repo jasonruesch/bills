@@ -56,6 +56,13 @@
         "__unparsed__": []
       }
     },
+    "codegen": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["npx graphql-codegen"],
+        "cwd": "libs/bills/data-access"
+      }
+    },
     "lint": {
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"]

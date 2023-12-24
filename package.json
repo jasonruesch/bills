@@ -5,6 +5,8 @@
   "scripts": {},
   "private": true,
   "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/client-preset": "^4.1.0",
     "@nx/eslint": "17.2.7",
     "@nx/eslint-plugin": "17.2.7",
     "@nx/js": "17.2.7",
@@ -23,6 +25,7 @@
     "typescript": "~5.2.2"
   },
   "dependencies": {
+    "graphql": "^16.8.1",
     "inquirer": "^9.2.12"
   }
 }
