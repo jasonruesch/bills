@@ -1,0 +1,65 @@
+{
+  "name": "bills-database",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/bills/database/src",
+  "projectType": "library",
+  "targets": {
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["supabase start"],
+        "cwd": "libs/bills/database"
+      }
+    },
+    "stop": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["supabase stop"],
+        "cwd": "libs/bills/database"
+      }
+    },
+    "create-local-snapshot": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "npx ts-node libs/bills/database/src/create-snapshot-of-local.ts -P libs/database-instance/aeons-world/tsconfig.json"
+        ],
+        "parallel": false
+      }
+    },
+    "create-prod-snapshot": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "npx ts-node libs/bills/database/src/create-snapshot-of-prod.ts -P libs/database-instance/aeons-world/tsconfig.json"
+        ],
+        "parallel": false
+      }
+    },
+    "restore-snapshot-to-local-db": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "npx ts-node libs/bills/database/src/restore-snapshot.ts -P libs/bills/database/tsconfig.json"
+        ],
+        "parallel": false,
+        "__unparsed__": []
+      }
+    },
+    "clear-local-db-data": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "PGPASSWORD=postgres psql -U postgres -h 127.0.0.1 -p 54322 -f libs/bills/database/supabase/clear-db.sql"
+        ],
+        "parallel": false,
+        "__unparsed__": []
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": []
+}
