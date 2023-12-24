@@ -1,12 +1,29 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.css';
+import { Session } from '@supabase/supabase-js';
+import { useEffect, useState } from 'react';
+import { supabase } from '../lib/supabase-client';
+import Account from './account';
+import Auth from './auth';
 
-import NxWelcome from './nx-welcome';
+function App() {
+  const [session, setSession] = useState<Session | null>(null);
 
-export function App() {
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+    });
+
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+  }, []);
+
   return (
-    <div>
-      <NxWelcome title="bills" />
+    <div className="container" style={{ padding: '50px 0 100px 0' }}>
+      {!session ? (
+        <Auth />
+      ) : (
+        <Account key={session.user.id} session={session} />
+      )}
     </div>
   );
 }
