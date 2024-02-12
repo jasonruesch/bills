@@ -48,6 +48,6 @@ jobs:
         run: npx nx report
 
       - name: Publish packages
-        run: npx nx publish tailwind --registry=https://npm.pkg.github.com --ver=${GITHUB_REF_NAME##*@}
+        run: npx nx publish tailwind --registry=https://npm.pkg.github.com --ver=${GITHUB_REF_NAME##*@} --tag=latest
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
