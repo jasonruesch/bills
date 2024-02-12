@@ -35,10 +35,16 @@ jobs:
           always-auth: true
           registry-url: https://npm.pkg.github.com
           scope: '@jasonruesch'
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install dependencies
-        run: npm ci
+        # Skip post-install scripts here, as a malicious script could steal NODE_AUTH_TOKEN.
+        run: npm ci --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run post-install scripts
+        # `npm rebuild` will run all those post-install scripts for us.
+        run: 'npm rebuild && npm run prepare --if-present'
 
       - name: Set SHAs for Nx
         uses: nrwl/nx-set-shas@v4
