@@ -1,7 +1,7 @@
 import forms from '@tailwindcss/forms';
 import type { Config } from 'tailwindcss';
 
-export default {
+export const tailwindPreset = {
   theme: {
     extend: {
       colors: {
@@ -11,3 +11,5 @@ export default {
   },
   plugins: [forms],
 } satisfies Omit<Config, 'content'>;
+
+export default tailwindPreset;
