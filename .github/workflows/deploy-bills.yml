@@ -27,6 +27,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Replace Verdaccio registry
+        run: find . -type f -name 'package-lock.json' -exec sed -i 's|http://localhost:4873|https://npm.pkg.github.com|g' {} +
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:

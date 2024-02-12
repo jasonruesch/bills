@@ -25,15 +25,14 @@ jobs:
       # The "--stop-agents-after" is optional, but allows idle agents to shut down once the "e2e-ci" targets have been requested
       # - run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js" --stop-agents-after="e2e-ci"
 
+      - name: Replace Verdaccio registry
+        run: find . -type f -name 'package-lock.json' -exec sed -i 's|http://localhost:4873|https://npm.pkg.github.com|g' {} +
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
-
-      - run: |
-          npm config set proxy null
-          npm config set https-proxy null
 
       - name: Install dependencies
         run: npm ci
