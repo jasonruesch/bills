@@ -3,7 +3,11 @@ import type { Config } from 'tailwindcss';
 
 export default {
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        test: 'silver',
+      },
+    },
   },
   plugins: [forms],
 } satisfies Omit<Config, 'content'>;
