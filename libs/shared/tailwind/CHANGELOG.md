@@ -1,3 +1,15 @@
+## 0.1.8 (2024-02-12)
+
+
+### 🩹 Fixes
+
+- **tailwind:** format exports
+
+
+### ❤️  Thank You
+
+- Jason Ruesch
+
 ## 0.1.7 (2024-02-12)
 
 
