@@ -56,5 +56,22 @@
       }
     }
   },
+  "targetDefaults": {
+    "@nx/rollup:rollup": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    }
+  },
+  "release": {
+    "projects": ["bills", "tailwind"],
+    "projectsRelationship": "independent",
+    "changelog": {
+      "projectChangelogs": true
+    },
+    "version": {
+      "conventionalCommits": true
+    }
+  },
   "nxCloudAccessToken": "YmUyNDhiM2EtZDFiZS00NTVjLWEyYjctY2Q0YTQyYzI1MDYzfHJlYWQtd3JpdGU="
 }

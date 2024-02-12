@@ -1,0 +1,5 @@
+# Replace ${GITHUB_TOKEN} with your GitHub Personal Access Token
+
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+@jasonruesch:registry=https://npm.pkg.github.com/
+always_auth=true

@@ -1,0 +1,10 @@
+{
+  "name": "@jasonruesch/bills-tailwind",
+  "version": "0.0.1",
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "tailwindcss": "^3.4.1"
+  },
+  "main": "./index.cjs.js",
+  "module": "./index.esm.js"
+}

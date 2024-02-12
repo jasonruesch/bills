@@ -1,0 +1,26 @@
+{
+  "name": "tailwind",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/tailwind/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/tailwind",
+        "main": "libs/shared/tailwind/src/index.ts",
+        "tsConfig": "libs/shared/tailwind/tsconfig.lib.json",
+        "assets": [],
+        "project": "libs/shared/tailwind/package.json",
+        "compiler": "swc",
+        "format": ["cjs", "esm"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs tailwind {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": ["scope:shared", "type:ui"]
+}
