@@ -18,7 +18,7 @@
       }
     },
     "publish": {
-      "command": "node tools/scripts/publish.mjs tailwind --version={args.version} --tag={args.tag} --access={args.access}",
+      "command": "node tools/scripts/publish.mjs tailwind {args.ver} {args.tag} {args.access}",
       "dependsOn": ["build"]
     }
   },
