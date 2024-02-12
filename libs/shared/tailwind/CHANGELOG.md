@@ -1,3 +1,15 @@
+## 0.1.4 (2024-02-12)
+
+
+### 🩹 Fixes
+
+- **tailwind:** set test color to blue
+
+
+### ❤️  Thank You
+
+- Jason Ruesch
+
 ## 0.1.3 (2024-02-12)
 
 
