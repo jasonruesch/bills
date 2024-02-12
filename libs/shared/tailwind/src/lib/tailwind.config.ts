@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        test: 'gold',
+        test: 'red',
       },
     },
   },

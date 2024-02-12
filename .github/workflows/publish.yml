@@ -1,8 +1,8 @@
-name: Publish
+name: Publish Tailwind
 
 on:
   push:
-    tags: ['*@*.*.*']
+    tags: ['tailwind@*.*.*']
 
 permissions:
   contents: read
@@ -48,6 +48,6 @@ jobs:
         run: npx nx report
 
       - name: Publish packages
-        run: npx nx release publish --registry=https://npm.pkg.github.com
+        run: npx nx publish tailwind --registry=https://npm.pkg.github.com --ver=${GITHUB_REF_NAME##*@}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
