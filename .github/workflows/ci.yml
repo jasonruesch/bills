@@ -30,6 +30,9 @@ jobs:
         with:
           node-version: 20
           cache: npm
+          always-auth: true
+          registry-url: https://npm.pkg.github.com
+          scope: '@jasonruesch'
 
       - name: Install dependencies
         # Skip post-install scripts here, as a malicious script could steal NODE_AUTH_TOKEN.
