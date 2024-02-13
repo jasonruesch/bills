@@ -1,3 +1,15 @@
+## 0.2.0 (2024-02-13)
+
+
+### 🚀 Features
+
+- **tailwind:** set test color to purple
+
+
+### ❤️  Thank You
+
+- Jason Ruesch
+
 ## 0.1.9 (2024-02-13)
 
 
