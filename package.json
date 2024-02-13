@@ -9,7 +9,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@jasonruesch/bills-tailwind": "file:libs/shared/tailwind",
+    "@jasonruesch/bills-tailwind": "0.1.9",
     "@nx/cypress": "18.0.4",
     "@nx/eslint": "18.0.4",
     "@nx/eslint-plugin": "18.0.4",

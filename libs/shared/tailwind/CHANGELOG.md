@@ -1,3 +1,15 @@
+## 0.1.9 (2024-02-13)
+
+
+### 🩹 Fixes
+
+- **tailwind:** publish to verdaccio
+
+
+### ❤️  Thank You
+
+- Jason Ruesch
+
 ## 0.1.8 (2024-02-12)
 
 
