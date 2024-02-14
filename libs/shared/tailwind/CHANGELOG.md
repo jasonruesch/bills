@@ -1,3 +1,15 @@
+## 0.6.0 (2024-02-14)
+
+
+### 🚀 Features
+
+- **tailwind:** set test color to turquoise
+
+
+### ❤️  Thank You
+
+- Jason Ruesch
+
 ## 0.5.0 (2024-02-14)
 
 

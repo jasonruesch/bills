@@ -69,34 +69,36 @@
     }
   },
   "release": {
+    "changelog": {
+      "workspaceChangelog": false,
+      "projectChangelogs": true,
+      "automaticFromRef": true
+    },
     "groups": {
       "apps": {
         "projects": "tag:type:app",
         "projectsRelationship": "independent",
         "changelog": {
-          "projectChangelogs": {
-            "createRelease": "github",
-            "file": "{projectRoot}/CHANGELOG.md"
+          "createRelease": "github",
+          "file": "{projectRoot}/CHANGELOG.md",
+          "renderOptions": {
+            "authors": false
           }
         },
         "version": {
-          "conventionalCommits": true,
-          "generatorOptions": {
-            "authors": false
-          }
+          "conventionalCommits": true
         }
       },
       "npm": {
         "projects": ["data-access", "tailwind"],
         "projectsRelationship": "independent",
         "changelog": {
-          "projectChangelogs": true
-        },
-        "version": {
-          "conventionalCommits": true,
-          "generatorOptions": {
+          "renderOptions": {
             "commitRefefences": false
           }
+        },
+        "version": {
+          "conventionalCommits": true
         }
       }
     }

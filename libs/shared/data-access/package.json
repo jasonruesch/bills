@@ -1,6 +1,6 @@
 {
   "name": "@jasonruesch/bills-data-access",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "dependencies": {
     "zustand": "^4.5.0"
   },
