@@ -1,3 +1,7 @@
+# Bills Changelog
+
+![](assets/screenshot.png)
+
 ## 0.5.0 (2024-02-14)
 
 
@@ -9,10 +13,6 @@
 ### ❤️  Thank You
 
 - Jason Ruesch
-
-# Bills Changelog
-
-![](assets/screenshot.png)
 
 ## 0.4.0 (2024-02-14)
 
