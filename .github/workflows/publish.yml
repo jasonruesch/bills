@@ -1,8 +1,8 @@
-name: Publish Tailwind
+name: Publish
 
 on:
   push:
-    tags: ['tailwind@*.*.*']
+    tags: ['*@*.*.*']
 
 permissions:
   contents: read
@@ -47,7 +47,7 @@ jobs:
       - name: Print Environment Info
         run: npx nx report
 
-      - name: Publish packages
-        run: npx nx publish tailwind --ver=${GITHUB_REF_NAME##*@} --tag=latest --access=restricted
+      - name: Publish package
+        run: npx nx publish ${GITHUB_REF_NAME%%@*} --ver=${GITHUB_REF_NAME##*@} --tag=latest
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
