@@ -46,5 +46,6 @@ export default defineConfig({
       reportsDirectory: '../../coverage/apps/bills',
       provider: 'v8',
     },
+    passWithNoTests: true,
   },
 });

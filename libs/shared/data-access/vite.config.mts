@@ -59,5 +59,6 @@ export default defineConfig({
       reportsDirectory: '../../../coverage/libs/shared/data-access',
       provider: 'v8',
     },
+    passWithNoTests: true,
   },
 });
