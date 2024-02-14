@@ -1,3 +1,15 @@
+## 0.4.0 (2024-02-14)
+
+
+### 🚀 Features
+
+- **bills:** update bg opacity to 5
+
+
+### ❤️  Thank You
+
+- Jason Ruesch
+
 ## 0.3.1 (2024-02-14)
 
 
