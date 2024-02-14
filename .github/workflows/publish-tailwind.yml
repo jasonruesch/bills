@@ -1,0 +1,55 @@
+name: Publish Tailwind
+
+on:
+  workflow_dispatch:
+  # push:
+  #   tags:
+  #     - 'tailwind@*'
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write # needed for provenance data generation
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# Cancel in-progress runs.
+concurrency:
+  group: 'publish'
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          always-auth: true
+          registry-url: https://npm.pkg.github.com
+          scope: '@jasonruesch'
+
+      - name: Install dependencies
+        # Skip post-install scripts here, as a malicious script could steal NODE_AUTH_TOKEN.
+        run: npm ci --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run post-install scripts
+        # `npm rebuild` will run all those post-install scripts for us.
+        run: 'npm rebuild && npm run prepare --if-present'
+
+      - name: Print Environment Info
+        run: npx nx report
+
+      - name: Publish package
+        run: npx nx publish tailwind --ver=${GITHUB_REF_NAME##*@} --tag=latest
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
