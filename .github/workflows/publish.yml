@@ -13,7 +13,7 @@ permissions:
 # Cancel in-progress runs.
 concurrency:
   group: 'publish'
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   test:
@@ -48,6 +48,6 @@ jobs:
         run: npx nx report
 
       - name: Publish package
-        run: npx nx publish ${GITHUB_REF_NAME%%@*} --ver=${GITHUB_REF_NAME##*@} --tag=latest
+        run: npx nx run-many -t publish -p ${GITHUB_REF_NAME%%@*} --ver=${GITHUB_REF_NAME##*@} --tag=latest
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
