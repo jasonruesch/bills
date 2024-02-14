@@ -1,3 +1,7 @@
+# Bills Changelog
+
+![](assets/screenshot.png)
+
 ## 0.4.0 (2024-02-14)
 
 
