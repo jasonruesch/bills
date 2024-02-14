@@ -1,3 +1,15 @@
+## 0.5.2 (2024-02-14)
+
+
+### 🩹 Fixes
+
+- **bills:** set opacity of borders to 50
+
+
+### ❤️  Thank You
+
+- Jason Ruesch
+
 # Bills Changelog
 
 ![](assets/screenshot.png)
