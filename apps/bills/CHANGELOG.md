@@ -1,3 +1,15 @@
+## 0.5.0 (2024-02-14)
+
+
+### 🚀 Features
+
+- **bills:** add bill list to app
+
+
+### ❤️  Thank You
+
+- Jason Ruesch
+
 # Bills Changelog
 
 ![](assets/screenshot.png)
