@@ -1,3 +1,10 @@
+## 0.6.0 (2024-02-14)
+
+
+### 🚀 Features
+
+- **bills:** change border color opacity ([73138dc](https://github.com/jasonruesch/bills/commit/73138dc))
+
 ## 0.5.2 (2024-02-14)
 
 

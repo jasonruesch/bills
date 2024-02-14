@@ -1,3 +1,15 @@
+## 0.3.0 (2024-02-14)
+
+
+### 🚀 Features
+
+- **data-access:** add formatDate util function
+
+
+### ❤️  Thank You
+
+- Jason Ruesch
+
 ## 0.2.0 (2024-02-14)
 
 
