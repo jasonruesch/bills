@@ -1,3 +1,15 @@
+## 0.4.0 (2024-02-14)
+
+
+### 🚀 Features
+
+- **tailwind:** update name in README
+
+
+### ❤️  Thank You
+
+- Jason Ruesch
+
 ## 0.3.0 (2024-02-14)
 
 

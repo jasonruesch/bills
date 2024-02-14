@@ -1,3 +1,15 @@
+## 0.2.0 (2024-02-14)
+
+
+### 🚀 Features
+
+- **data-access:** update name in README
+
+
+### ❤️  Thank You
+
+- Jason Ruesch
+
 ## 0.1.0 (2024-02-14)
 
 

@@ -1,3 +1,15 @@
+## 0.3.1 (2024-02-14)
+
+
+### 🩹 Fixes
+
+- **bills:** update bg color from 10 to 20 opacity
+
+
+### ❤️  Thank You
+
+- Jason Ruesch
+
 ## 0.3.0 (2024-02-14)
 
 
