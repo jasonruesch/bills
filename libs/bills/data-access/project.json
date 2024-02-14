@@ -1,0 +1,19 @@
+{
+  "name": "data-access-bills",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/bills/data-access/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/bills/data-access",
+        "main": "libs/bills/data-access/src/index.ts",
+        "tsConfig": "libs/bills/data-access/tsconfig.lib.json",
+        "assets": ["libs/bills/data-access/*.md"]
+      }
+    }
+  },
+  "tags": ["scope:bills", "type:data-access"]
+}

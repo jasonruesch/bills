@@ -18,6 +18,9 @@
       "@jasonruesch/bills-data-access": [
         "libs/shared/data-access/src/index.ts"
       ],
+      "@jasonruesch/bills-data-access-bills": [
+        "libs/bills/data-access/src/index.ts"
+      ],
       "@jasonruesch/bills-tailwind": ["libs/shared/tailwind/src/index.ts"]
     }
   },
