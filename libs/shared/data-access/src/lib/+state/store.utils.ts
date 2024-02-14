@@ -25,3 +25,12 @@ export function upsert<T extends { id: string }>(item: T, target: T[]) {
     ? target.map((it) => (it.id === item.id ? item : it))
     : [...target, item];
 }
+
+export const formatDate = (date: number | Date) => {
+  return new Intl.DateTimeFormat('en-US', {
+    dateStyle: 'short',
+    timeStyle: 'short',
+  })
+    .format(date)
+    .replace(',', '');
+};
