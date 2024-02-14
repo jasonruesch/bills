@@ -2,6 +2,18 @@
 
 ![](assets/screenshot.png)
 
+## 0.5.1 (2024-02-14)
+
+
+### 🩹 Fixes
+
+- **bills:** use test color for bill list borders
+
+
+### ❤️  Thank You
+
+- Jason Ruesch
+
 ## 0.5.0 (2024-02-14)
 
 

@@ -72,9 +72,7 @@
     "projects": ["bills", "data-access", "tailwind"],
     "projectsRelationship": "independent",
     "changelog": {
-      "projectChangelogs": true,
-      "interactive": true,
-      "createRelease": true
+      "projectChangelogs": true
     },
     "version": {
       "conventionalCommits": true
