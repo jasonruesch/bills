@@ -1,4 +1,4 @@
-# data-access
+# Data Access
 
 This library was generated with [Nx](https://nx.dev).
 
