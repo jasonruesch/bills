@@ -69,13 +69,36 @@
     }
   },
   "release": {
-    "projects": ["bills", "data-access", "tailwind"],
-    "projectsRelationship": "independent",
-    "changelog": {
-      "projectChangelogs": true
-    },
-    "version": {
-      "conventionalCommits": true
+    "groups": {
+      "apps": {
+        "projects": "tag:type:app",
+        "projectsRelationship": "independent",
+        "changelog": {
+          "projectChangelogs": {
+            "createRelease": "github",
+            "file": "{projectRoot}/CHANGELOG.md"
+          }
+        },
+        "version": {
+          "conventionalCommits": true,
+          "generatorOptions": {
+            "authors": false
+          }
+        }
+      },
+      "npm": {
+        "projects": ["data-access", "tailwind"],
+        "projectsRelationship": "independent",
+        "changelog": {
+          "projectChangelogs": true
+        },
+        "version": {
+          "conventionalCommits": true,
+          "generatorOptions": {
+            "commitRefefences": false
+          }
+        }
+      }
     }
   },
   "nxCloudAccessToken": "YmUyNDhiM2EtZDFiZS00NTVjLWEyYjctY2Q0YTQyYzI1MDYzfHJlYWQtd3JpdGU="
