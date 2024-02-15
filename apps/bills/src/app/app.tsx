@@ -20,7 +20,7 @@ export function App() {
           {allBills.map((bill) => (
             <div
               key={bill.id}
-              className="p-4 border border-test/70 rounded-md col-span-4"
+              className="p-4 border border-test/80 rounded-md col-span-4"
             >
               <p className="font-semibold">{bill.name}</p>
               <p>{formatDate(bill.createdAt)}</p>
