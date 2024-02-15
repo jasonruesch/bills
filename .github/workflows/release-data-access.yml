@@ -1,4 +1,4 @@
-name: Release
+name: Release Data Access
 
 on:
   workflow_dispatch:
@@ -60,17 +60,13 @@ jobs:
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
 
       - name: Release
-        run: npx nx release --skip-publish
+        run: npx nx release -p data-access --skip-publish
         env:
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
 
-      # Fetch any tag pushed by the release command
-      # Push the commit
-      # Push each tag individually to bypass the limit to trigger the push tag workflow
       - name: Push commit and tags
         run: |
-          git fetch --tags -f
           git push
-          git show-ref --tags | grep -v -F "$(git ls-remote --tags origin | cut -f 2)" | cut -d ' ' -f 2 | sed -e "s:^refs/tags/::" | xargs -L1 -I'{}' git push origin '{}'
+          git push --tags
         env:
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
