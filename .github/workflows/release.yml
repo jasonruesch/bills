@@ -39,6 +39,13 @@ jobs:
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
+      - name: Generate a token
+        id: generate-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
       - name: Install dependencies
         # Skip post-install scripts here, as a malicious script could steal NODE_AUTH_TOKEN.
         run: npm ci --ignore-scripts
@@ -55,4 +62,4 @@ jobs:
       - name: Release
         run: npx nx release --first-release --skip-publish
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
