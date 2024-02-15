@@ -65,6 +65,8 @@ jobs:
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
 
       - name: Push commit and tags
-        run: git push
+        run: |
+          git pull --rebase
+          git push
         env:
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}

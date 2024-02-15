@@ -66,6 +66,7 @@ jobs:
 
       - name: Push commit and tags
         run: |
+          git pull --rebase
           git push
           git push --tags
         env:
