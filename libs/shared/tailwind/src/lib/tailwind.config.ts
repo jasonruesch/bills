@@ -5,7 +5,7 @@ export const tailwindPreset = {
   theme: {
     extend: {
       colors: {
-        test: '#000005',
+        test: '#000006',
       },
     },
   },
