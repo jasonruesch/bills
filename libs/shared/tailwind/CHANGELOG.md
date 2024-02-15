@@ -1,3 +1,15 @@
+## 0.10.0 (2024-02-15)
+
+
+### 🚀 Features
+
+- **tailwind:** increment test color
+
+
+### ❤️  Thank You
+
+- Jason Ruesch
+
 ## 0.9.0 (2024-02-15)
 
 

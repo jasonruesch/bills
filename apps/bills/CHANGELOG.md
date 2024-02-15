@@ -1,3 +1,10 @@
+## 0.11.0 (2024-02-15)
+
+
+### 🚀 Features
+
+- **bills:** remove bg opacity ([a448734](https://github.com/jasonruesch/bills/commit/a448734))
+
 ## 0.10.0 (2024-02-15)
 
 
