@@ -1,3 +1,10 @@
+## 0.10.0 (2024-02-15)
+
+
+### 🚀 Features
+
+- **bills:** increment border opacity ([cff8589](https://github.com/jasonruesch/bills/commit/cff8589))
+
 ## 0.9.0 (2024-02-15)
 
 
