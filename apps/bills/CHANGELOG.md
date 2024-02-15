@@ -1,3 +1,10 @@
+## 0.14.0 (2024-02-15)
+
+
+### 🚀 Features
+
+- **bills:** increment value ([e498a34](https://github.com/jasonruesch/bills/commit/e498a34))
+
 ## 0.13.0 (2024-02-15)
 
 
