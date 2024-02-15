@@ -34,3 +34,5 @@ export const formatDate = (date: number | Date) => {
     .format(date)
     .replace(',', '');
 };
+
+export const test = 1;
