@@ -3,8 +3,7 @@ name: Publish
 on:
   push:
     tags:
-      - '*@*'
-      - '!bills@*'
+      - '*@*.*.*'
 
 permissions:
   contents: read
