@@ -14,7 +14,7 @@ permissions:
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # Cancel in-progress runs.
 concurrency:
-  group: 'publish'
+  group: 'publish-tailwind'
   cancel-in-progress: true
 
 jobs:
