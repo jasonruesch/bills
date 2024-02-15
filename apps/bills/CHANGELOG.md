@@ -1,3 +1,10 @@
+## 0.13.0 (2024-02-15)
+
+
+### 🚀 Features
+
+- **bills:** increment value ([4d5f520](https://github.com/jasonruesch/bills/commit/4d5f520))
+
 ## 0.12.0 (2024-02-15)
 
 
