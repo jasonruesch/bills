@@ -60,8 +60,11 @@ jobs:
         run: npx nx report
 
       - name: Release
+        run: npx nx release --first-release --skip-publish
+
+      - name: Push commit and tags
         run: |
-          npx nx release --first-release --skip-publish
+          git fetch --tags -f
           git pull --tags
           git push
           git push --tags
