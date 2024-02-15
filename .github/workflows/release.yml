@@ -1,10 +1,7 @@
-name: Publish
+name: Release
 
 on:
-  push:
-    tags:
-      - '*@*'
-      - '!bills@*'
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -12,13 +9,15 @@ permissions:
   id-token: write # needed for provenance data generation
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# Cancel in-progress runs.
 concurrency:
-  group: 'publish'
-  cancel-in-progress: false
+  group: 'release'
+  cancel-in-progress: true
 
 jobs:
-  publish:
-    name: Publish
+  release:
+    if: github.ref == 'refs/heads/main'
+    name: Release
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -48,7 +47,7 @@ jobs:
       - name: Print Environment Info
         run: npx nx report
 
-      - name: Publish package
-        run: npx nx run-many -t publish -p ${GITHUB_REF_NAME%%@*} --ver=${GITHUB_REF_NAME##*@} --tag=latest
+      - name: Release
+        run: npx nx release --first-release --skip-publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
