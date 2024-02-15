@@ -1,9 +1,8 @@
 name: Deploy Bills
 
 on:
-  push:
-    tags:
-      - 'bills@*.*.*'
+  release:
+    types: [published]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -24,6 +23,7 @@ concurrency:
 jobs:
   # Build job
   build:
+    if: ${{ startsWith(github.ref_name, 'bills') }}
     name: Build
     runs-on: ubuntu-latest
     steps:
