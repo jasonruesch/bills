@@ -1,3 +1,10 @@
+## 0.9.0 (2024-02-15)
+
+
+### 🚀 Features
+
+- **bills:** increment border opacity ([f48e473](https://github.com/jasonruesch/bills/commit/f48e473))
+
 ## 0.6.0 (2024-02-14)
 
 
