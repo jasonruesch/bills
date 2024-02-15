@@ -11,6 +11,12 @@ permissions:
   contents: read
   packages: read
 
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# Cancel in-progress runs.
+concurrency:
+  group: ${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
 jobs:
   main:
     if: ${{ !startsWith(github.event.head_commit.message, 'chore(release)') }}
