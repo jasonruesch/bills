@@ -1,3 +1,15 @@
+## 0.14.0 (2024-02-15)
+
+
+### 🚀 Features
+
+- **tailwind:** increment value
+
+
+### ❤️  Thank You
+
+- Jason Ruesch
+
 ## 0.13.0 (2024-02-15)
 
 
