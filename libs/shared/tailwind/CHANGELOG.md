@@ -1,3 +1,24 @@
+## 0.7.0 (2024-02-15)
+
+
+### 🚀 Features
+
+- **tailwind:** set test color to magenta
+
+
+### 🩹 Fixes
+
+- **tailwind:** set test color to lime
+
+- **tailwind:** set test color to yellow
+
+- **tailwind:** set test color to green
+
+
+### ❤️  Thank You
+
+- Jason Ruesch
+
 ## 0.6.0 (2024-02-14)
 
 
