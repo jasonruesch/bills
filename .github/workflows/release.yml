@@ -60,6 +60,8 @@ jobs:
         run: npx nx report
 
       - name: Release
-        run: npx nx release --first-release --skip-publish
+        run: |
+          npx nx release --first-release --skip-publish
+          git push --follow-tags
         env:
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
