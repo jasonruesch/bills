@@ -1,3 +1,15 @@
+## 0.12.0 (2024-02-16)
+
+
+### 🚀 Features
+
+- **data-access:** increment value
+
+
+### ❤️  Thank You
+
+- Jason Ruesch
+
 ## 0.11.0 (2024-02-15)
 
 

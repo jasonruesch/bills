@@ -1,3 +1,10 @@
+## 0.15.0 (2024-02-16)
+
+
+### 🚀 Features
+
+- **bills:** increment value ([fcb9f3d](https://github.com/jasonruesch/bills/commit/fcb9f3d))
+
 ## 0.14.0 (2024-02-15)
 
 
