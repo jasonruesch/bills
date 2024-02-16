@@ -71,3 +71,8 @@ jobs:
           git push --tags
         env:
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
+
+      # - name: Publish package
+      #   run: npx nx run-many -t publish -p data-access --ver=${GITHUB_REF_NAME##*@} --tag=latest
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

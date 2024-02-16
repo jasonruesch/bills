@@ -1,4 +1,4 @@
-name: Release Tailwind
+name: Release
 
 on:
   workflow_dispatch:
@@ -11,7 +11,7 @@ permissions:
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production releases to complete.
 concurrency:
-  group: 'release-tailwind'
+  group: 'release'
   cancel-in-progress: false
 
 jobs:
@@ -60,19 +60,16 @@ jobs:
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
 
       - name: Release
-        run: npx nx release -p tailwind --skip-publish
+        run: npx nx release --skip-publish
         env:
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
 
+      # There is a limit of 3 tags pushed to trigger a workflow.
       - name: Push commit and tags
         run: |
+          git fetch --tags -f
           git pull --rebase
           git push
           git push --tags
         env:
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
-
-      # - name: Publish package
-      #   run: npx nx run-many -t publish -p tailwind --ver=${GITHUB_REF_NAME##*@} --tag=latest
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

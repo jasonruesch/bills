@@ -89,7 +89,7 @@
           "conventionalCommits": true
         }
       },
-      "npm": {
+      "libs": {
         "projects": ["data-access", "tailwind"],
         "projectsRelationship": "independent",
         "changelog": {
