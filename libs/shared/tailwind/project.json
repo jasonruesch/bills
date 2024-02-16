@@ -20,6 +20,14 @@
     "publish": {
       "command": "node tools/scripts/publish.mjs tailwind {args.ver} {args.tag} {args.access}",
       "dependsOn": ["build"]
+    },
+    "nx-release-publish": {
+      "executor": "@nx/js:release-publish",
+      "dependsOn": ["build"],
+      "options": {
+        "packageRoot": "dist/libs/shared/tailwind",
+        "registry": "https://npm.pkg.github.com/"
+      }
     }
   },
   "tags": ["scope:shared", "type:ui"]
