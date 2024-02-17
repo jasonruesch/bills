@@ -1,0 +1,7 @@
+# Duplicate this file and name the new file .npmrc
+# 
+# Replace ${GITHUB_TOKEN} with your actual personal access token
+# or export the GITHUB_TOKEN from your bash or zsh profile
+
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+@jasonruesch:registry=https://npm.pkg.github.com/
