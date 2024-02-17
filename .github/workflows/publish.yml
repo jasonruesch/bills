@@ -50,7 +50,7 @@ jobs:
         run: npx nx report
 
       - name: Build
-        run: npx nx build -p ${GITHUB_REF_NAME%%@*}
+        run: npx nx build ${GITHUB_REF_NAME%%@*}
 
       - name: Publish package
         # run: npx nx run-many -t publish -p ${GITHUB_REF_NAME%%@*} --ver=${GITHUB_REF_NAME##*@} --tag=latest
