@@ -49,6 +49,9 @@ jobs:
       - name: Print Environment Info
         run: npx nx report
 
+      - name: Build
+        run: npx nx build -p ${GITHUB_REF_NAME%%@*}
+
       - name: Publish package
         # run: npx nx run-many -t publish -p ${GITHUB_REF_NAME%%@*} --ver=${GITHUB_REF_NAME##*@} --tag=latest
         run: npx nx release publish -p ${GITHUB_REF_NAME%%@*}

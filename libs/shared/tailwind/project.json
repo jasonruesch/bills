@@ -23,9 +23,8 @@
     },
     "nx-release-publish": {
       "executor": "@nx/js:release-publish",
-      "dependsOn": ["build"],
       "options": {
-        "packageRoot": "dist/libs/shared/tailwind",
+        "packageRoot": "./dist/libs/shared/tailwind",
         "registry": "https://npm.pkg.github.com/"
       }
     }
