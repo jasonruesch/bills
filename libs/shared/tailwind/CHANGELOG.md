@@ -1,3 +1,17 @@
+## 0.15.0 (2024-02-17)
+
+
+### 🚀 Features
+
+- **tailwind:** increment value
+
+- **tailwind:** configure nx release publish
+
+
+### ❤️  Thank You
+
+- Jason Ruesch
+
 ## 0.14.0 (2024-02-15)
 
 

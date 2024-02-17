@@ -1,3 +1,15 @@
+## 0.13.0 (2024-02-17)
+
+
+### 🚀 Features
+
+- **data-access:** configure nx release publish
+
+
+### ❤️  Thank You
+
+- Jason Ruesch
+
 ## 0.12.0 (2024-02-16)
 
 
